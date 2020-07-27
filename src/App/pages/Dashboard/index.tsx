@@ -9,6 +9,8 @@ import {
   StandaloneSearchBox,
 } from "@react-google-maps/api";
 
+import { getCoordFromAddress } from "../../../services/geocode";
+
 const containerStyle = {
   width: "100%",
   height: "400px",
@@ -39,11 +41,9 @@ function DashBoard() {
     }
   };
 
-  console.log(process.env);
-  console.log(process.env.REACT_APP_BALL);
+  // console.log(process.env);
 
   return (
-    <div>DashBoard</div>
     // <Container>
     //   <input
     //     value={address}
@@ -52,18 +52,18 @@ function DashBoard() {
     //     }}
     //   />
     //   <button
-    //     onClick={() =>
-    //       Geocode.fromAddress(address).then((res) => {
+    //     onClick={() => {
+    //       getCoordFromAddress(address).then((res) => {
     //         console.log(res);
-    //       })
-    //     }
+    //       });
+    //     }}
     //   >
     //     Check
     //   </button>
     // </Container>
-    // <LoadScript googleMapsApiKey="AIzaSyA77CaW_serIqOnTioIPMroMQEyl7_NINM">
+    // <LoadScript googleMapsApiKey={process.env.REACT_APP_MAP_KEY as string}>
     //   <GoogleMap mapContainerStyle={containerStyle} center={center} zoom={10}>
-    //     {/* <DirectionsService
+    //     <DirectionsService
     //       options={{
     //         destination: destination,
     //         origin: origin,
@@ -78,7 +78,7 @@ function DashBoard() {
     //           directions: destinationResponse,
     //         }}
     //       />
-    //     )} */}
+    //     )}
     //   </GoogleMap>
     // </LoadScript>
   );
