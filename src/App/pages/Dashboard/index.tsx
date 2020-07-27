@@ -39,7 +39,11 @@ function DashBoard() {
     }
   };
 
+  console.log(process.env);
+  console.log(process.env.REACT_APP_BALL);
+
   return (
+    <div>DashBoard</div>
     // <Container>
     //   <input
     //     value={address}
